@@ -9,11 +9,13 @@ int encrypt(string file, int k)
     ofstream fout;
     fin.open(file, ios::binary);
     fout.open("encrypted.txt", ios::binary);
-    while (fin >> noskipws >> c;)
+    while (fin >> noskipws >> c)
     {
 
         fout << char((int)c + k);
     }
+    fin.close();
+    fout.close();
     return 0;
 }
 
@@ -22,13 +24,15 @@ int decrypt(string file, int k)
     char c;
     ifstream fin;
     ofstream fout;
-    fin.open(file, ios::binary);
+    fin.open(file, ios::binary);2
     fout.open("decrypted.txt", ios::binary);
-    while (fin >> noskipws >> c;)
+    while (fin >> noskipws >> c)
     {
 
-        fout << char((c - k);
+        fout << char((c - k));
     }
+    fin.close();
+    fout.close();
     return 0;
 }
 
